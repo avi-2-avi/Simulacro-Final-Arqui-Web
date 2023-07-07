@@ -1,0 +1,23 @@
+services:
+  db:
+    ports:
+      - 5433:5432
+    container_name: postgres_container
+    image: postgres
+    environment:
+      - POSTGRES_DB=datosSimulacro_db
+      - POSTGRES_USER=admin
+      - POSTGRES_PASSWORD=pass
+    restart: always
+  # backend:
+  #   build: .
+  #   container_name: spring_container
+  #   ports:
+  #     - 8080:8080
+  #   environment:
+  #     db-url: jdbc:postgresql://db:5432/demodb-dk
+  #     db-username: admin
+  #     db-password: pass
+  #   depends_on:
+  #     - db
+  #   restart: always
